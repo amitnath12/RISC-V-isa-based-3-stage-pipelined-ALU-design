@@ -19,15 +19,15 @@ Result is computed and forwarded to the next stage or written back.
 # R-Type Instructions (Register-Register Operations)
 Opcode: 0110011.
 
-- ADD: Funct3 == 000,Funct7 ==0000000.
-- SUB:	 Funct3 ==        000	     0100000.
-- SLL:  Funct3 ==         	001	     0000000.
-- SLT:	 Funct3 ==           010	     0000000.
-- SLTU:	          011	     0000000.
-- XOR	            100	     0000000.
-- SRL	            101    	 0000000.
-- SRA	            101	     0100000.
-- OR	            110	     0000000.
+- ADD(Add): Funct3 == 000,Funct7 ==0000000.
+- SUB(Subtract):	 Funct3 ==        000,Funct7 ==	     0100000.
+- SLL(Shift Left Logical):  Funct3 ==         	001,Funct7 ==	     0000000.
+- SLT(Set Less Than):	 Funct3 ==           010,Funct7 ==	     0000000.
+- SLTU(Set Less Than Unsigned):	 Funct3 ==	          011,Funct7 ==	     0000000.
+- XOR(XOR ):	 Funct3 ==	            100,Funct7 ==	     0000000.
+- SRL(Shift Right Logical):	 Funct3 ==	            101,Funct7 ==    	 0000000.
+- SRA(Shift Right Arithmetic):	 Funct3 ==	            101,Funct7 ==	     0100000.
+- OR(OR):	 Funct3 ==	            110,Funct7 ==	     0000000.
 
 # I-Type Instructions(Immidiate Operations)
 opcode: 0010011:
