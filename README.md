@@ -20,8 +20,8 @@ Result is computed and forwarded to the next stage or written back.
 Opcode: 0110011.
 
 - Instruction	   Funct3	    Funct7.
-ADD	            000	     0000000.
-SUB	            000	     0100000.
+- ADD	            000	     0000000.
+- SUB	            000	     0100000.
 SLL           	001	     0000000.
 SLT	            010	     0000000.
 SLTU	          011	     0000000.
