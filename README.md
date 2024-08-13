@@ -17,17 +17,17 @@ Control signals are generated.
 Result is computed and forwarded to the next stage or written back.
 
 # R-Type Instructions (Register-Register Operations)
-Opcode: 0110011
+Opcode: 0110011.
 
-Instruction	   Funct3	    Funct7
-ADD	            000	     0000000
-SUB	            000	     0100000
-SLL           	001	     0000000
-SLT	            010	     0000000
-SLTU	          011	     0000000
-XOR	            100	     0000000
-SRL	            101    	 0000000
-SRA	            101	     0100000
-OR	            110	     0000000
+Instruction	   Funct3	    Funct7.
+ADD	            000	     0000000.
+SUB	            000	     0100000.
+SLL           	001	     0000000.
+SLT	            010	     0000000.
+SLTU	          011	     0000000.
+XOR	            100	     0000000.
+SRL	            101    	 0000000.
+SRA	            101	     0100000.
+OR	            110	     0000000.
 
 
