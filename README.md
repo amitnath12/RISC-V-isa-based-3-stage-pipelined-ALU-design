@@ -30,4 +30,17 @@ Opcode: 0110011.
 - SRA	            101	     0100000.
 - OR	            110	     0000000.
 
+# I-Type Instructions(Immidiate Operations)
+ALU Immediate Instructions (opcode: 0010011):
+
+- ADDI (Add Immediate): 000
+- SLTI (Set Less Than Immediate): 010
+- SLTIU (Set Less Than Immediate Unsigned): 011
+- XORI (XOR Immediate): 100
+- ORI (OR Immediate): 110
+- ANDI (AND Immediate): 111
+- SLLI (Shift Left Logical Immediate): 001
+- SRLI (Shift Right Logical Immediate): 101 (with funct7 = 0000000)
+- SRAI (Shift Right Arithmetic Immediate): 101 (with funct7 = 0100000)
+
 
