@@ -19,7 +19,7 @@ Result is computed and forwarded to the next stage or written back.
 # R-Type Instructions (Register-Register Operations)
 Opcode: 0110011.
 
-Instruction	   Funct3	    Funct7.
+- Instruction	   Funct3	    Funct7.
 ADD	            000	     0000000.
 SUB	            000	     0100000.
 SLL           	001	     0000000.
