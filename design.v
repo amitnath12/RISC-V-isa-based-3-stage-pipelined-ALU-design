@@ -1,14 +1,11 @@
-
 module alu (
     input [31:0] operand_a,
     input [31:0] operand_b,
-  input [3:0] alu_op,
-    input[6:0] opcode
+    input [3:0] alu_op,
     output reg [31:0] result
 );
 
 always @(*) begin
-  if(opcode == 7'b0110011)begin  //R type instruction
     case (alu_op)
         4'b0000: result = operand_a + operand_b; // ADD
         4'b0001: result = operand_a - operand_b; // SUB
@@ -18,19 +15,23 @@ always @(*) begin
         4'b0101: result = operand_a << operand_b[4:0]; // SLL
         4'b0110: result = operand_a >> operand_b[4:0]; // SRL
         4'b0111: result = $signed(operand_a) >>> operand_b[4:0]; // SRA
-        4'b1000: result = // SLT OPERATION
-        4'b1001: result = // SLTU OPERATION
+        4'b1000: begin   // SLT OPERATION
+          if ($signed(operand_a) < $signed(operand_b))
+                    result = 32'b1;
+                else
+                    result = 32'b0; 
+                 end
+        4'b1001: begin // SLTU OPERATION
+          if (operand_a < operand_b)
+                    result = 32'b1;
+                else
+                    result = 32'b0;
+        end
         default: result = 32'b0;
     endcase
-  end
-  if(opcode == 7'b0010011)begin  //I type(immidiate) instruction
-    
-  end
 end
 
 endmodule
-
-
 
 module control_logic (
     input clk,
@@ -49,7 +50,7 @@ reg [6:0] decode_opcode;
 
 reg [31:0] execute_operand_a, execute_operand_b;
 reg [3:0] execute_alu_operation;
-reg[7:0] execute_opcode;
+reg [7:0] execute_opcode;
 wire [31:0] execute_result;
 
 // Instantiate ALU
@@ -57,7 +58,6 @@ alu alu_instance (
     .operand_a(execute_operand_a),
     .operand_b(execute_operand_b),
     .alu_op(execute_alu_operation),
-    .opcode(execute_opcode),
     .result(execute_result)
 );
 
@@ -120,7 +120,7 @@ always @(posedge clk or posedge reset) begin
           
                            // Fetch operands from register file
                            decode_operand_a <= reg_file[decode_rs1];
-                           decode_operand_b <= reg_file[fetch_instruction[31:20];];  //second operand is embedded on instruction
+                           decode_operand_b <= fetch_instruction[31:20];  //second operand is embedded on instruction
           
                            // Determinining ALU operation resgister to immidiate operation
                            case (fetch_instruction[14:12])  //checking funct3 from instruction
@@ -172,6 +172,3 @@ always @(posedge clk or posedge reset) begin
 end
 
 endmodule
-
-
-
